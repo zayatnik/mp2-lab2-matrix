@@ -196,7 +196,7 @@ bool TMatrix<ValType>::operator!=(const TMatrix<ValType> &mt) const
 template <class ValType> // присваивание
 TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 {
-    return TMatrix<ValType>();
+    return *this;
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // сложение
