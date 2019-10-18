@@ -241,7 +241,7 @@ TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 		throw runtime_error("Too much size of matrix!");
 	}
 	for (int i = Size - 1; i >= 0; i--) {
-		pVector[Size - 1 - i] = TVector<ValType>(i + 1, Size - i - 1);
+		this->pVector[Size - 1 - i] = TVector<ValType>(i + 1, Size - i - 1);
 	}
 } /*-------------------------------------------------------------------------*/
 
@@ -256,7 +256,7 @@ TMatrix<ValType>::TMatrix(const TVector<TVector<ValType> > &mt):
 template <class ValType> // сравнение
 bool TMatrix<ValType>::operator==(const TMatrix<ValType> &mt) const
 {
-	return (TVector<TVector<ValType>>::operator==(mt));
+	return (TVector<TVector<ValType> >::operator==(mt));
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // сравнение
@@ -272,10 +272,10 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 		return *this;
 	}
 	Size = mt.Size;
-	delete[] pVector;
-	pVector = new TVector<ValType>[Size]();
+	delete[] this->pVector;
+	this->pVector = new TVector<ValType>[Size]();
 	for (int i = 0; i < Size; i++) {
-		pVector[i] = mt.pVector[i];
+		this->pVector[i] = mt.pVector[i];
 	}
 	return *this;
 } /*-------------------------------------------------------------------------*/
@@ -283,13 +283,13 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 template <class ValType> // сложение
 TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
-	return TVector<TVector<ValType>>::operator+(mt);
+	return TVector<TVector<ValType> >::operator+(mt);
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // вычитание
 TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
 {
-	return TVector<TVector<ValType>>::operator-(mt);
+	return TVector<TVector<ValType> >::operator-(mt);
 } /*--------------------------------------------------s-----------------------*/
 
 // TVector О3 Л2 П4 С6
