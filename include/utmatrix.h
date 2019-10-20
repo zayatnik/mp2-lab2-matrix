@@ -241,7 +241,7 @@ TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 		throw runtime_error("Too much size of matrix!");
 	}
 	for (int i = (TVector<TVector<ValType> > :: Size) - 1; i >= 0; i--) {
-		this->pVector[Size - 1 - i] = TVector<ValType>(i + 1, Size - i - 1);
+		this->pVector[(TVector<TVector<ValType> > ::Size) - 1 - i] = TVector<ValType>(i + 1, (TVector<TVector<ValType> > ::Size) - i - 1);
 	}
 } /*-------------------------------------------------------------------------*/
 
@@ -271,10 +271,10 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 	if (this == &mt) {
 		return *this;
 	}
-	Size = mt.Size;
+	(TVector<TVector<ValType> > ::Size) = mt.Size;
 	delete[] this->pVector;
-	this->pVector = new TVector<ValType>[Size]();
-	for (int i = 0; i < Size; i++) {
+	this->pVector = new TVector<ValType>[(TVector<TVector<ValType> > ::Size)]();
+	for (int i = 0; i < (TVector<TVector<ValType> > ::Size); i++) {
 		this->pVector[i] = mt.pVector[i];
 	}
 	return *this;
