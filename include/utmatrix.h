@@ -240,7 +240,7 @@ TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 	if ((s < 0) || (s > MAX_MATRIX_SIZE)) {
 		throw runtime_error("Too much size of matrix!");
 	}
-	for (int i = Size - 1; i >= 0; i--) {
+	for (int i = (TVector<TVector<ValType> > :: Size) - 1; i >= 0; i--) {
 		this->pVector[Size - 1 - i] = TVector<ValType>(i + 1, Size - i - 1);
 	}
 } /*-------------------------------------------------------------------------*/
