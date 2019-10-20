@@ -87,7 +87,6 @@ template <class ValType>
 TVector<ValType>::~TVector()
 {
 	delete[] pVector;
-	pVector = nullptr;
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // доступ
