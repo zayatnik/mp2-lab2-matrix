@@ -63,7 +63,7 @@ public:
 template <class ValType>
 TVector<ValType>::TVector(int s, int si)
 {
-	if (s > MAXVECTORSIZE || s < 0) {
+	if (s > 100000000 || s < 0) {
 		throw runtime_error("Too much large size");
 	}
 	if (si < 0) {
