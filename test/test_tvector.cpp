@@ -28,7 +28,7 @@ TEST(TVector, can_create_vector_with_zero_size)
 
 TEST(TVector, throws_when_create_vector_with_negative_length)
 {
-	ASSERT_ANY_THROW(TVector<int> v(-5, 1));
+	ASSERT_ANY_THROW(TVector<int> v(-5));
 }
 
 TEST(TVector, throws_when_create_vector_with_negative_startindex)
